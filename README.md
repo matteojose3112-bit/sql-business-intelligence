@@ -1,81 +1,105 @@
 # SQL Business Intelligence
 
-> A practical analytics case study using a relational business dataset, documented SQL queries, and a browser-based results showcase.
+> A synthetic retail sales warehouse, reusable SQL analysis, and a browser-based business intelligence showcase.
 
-**Status:** Planning / initial documentation  
-**Primary language:** PostgreSQL-compatible SQL  
-**Live demo:** Not deployed yet  
-**Deployment target:** GitHub Pages static showcase (planned); SQL execution will be reproducible locally against PostgreSQL.
+**Status:** SQL analytics MVP implemented; automated validation and public deployment in progress  
+**Primary language:** SQL (SQLite-compatible)  
+**Validation:** Python standard-library `unittest` + SQLite  
+**Dashboard:** Static HTML, CSS, and JavaScript  
+**Live demo:** Pending GitHub Pages activation and deployment
 
 ## Overview
 
-Business data is only useful when it can be queried consistently and translated into understandable performance indicators.
+Signal BI demonstrates how a normalized relational dataset can support practical management reporting. The project models customers, products, orders, and order items, then uses analytical SQL to calculate sales performance, customer value, product contribution, and channel/region mix.
 
-This repository is a portfolio project intended to demonstrate practical, maintainable software built around a recognizable business use case. The capabilities below describe the planned scope; they should not be interpreted as already implemented.
+All records and values are fictional and are intended only for portfolio demonstration.
 
-## Intended users
+## Implemented capabilities
 
-Business analysts, operations teams, reporting specialists, and organizations seeking clearer management information.
+- Relational schema with primary keys, foreign keys, checks, and reporting indexes.
+- Synthetic seed dataset with 8 customers, 5 products, 18 orders, and 22 order-item rows.
+- Monthly revenue, average order value, gross profit, and gross-margin analysis.
+- Customer lifetime revenue and repeat-purchase segmentation.
+- Product revenue, units sold, and gross-profit analysis.
+- Sales channel and regional contribution analysis.
+- Responsive static dashboard with period filter, KPI cards, monthly revenue bars, channel mix, and product table.
+- Automated SQLite validation tests for referential integrity, seed counts, and analytics queries.
+- GitHub Actions workflows for SQL validation and GitHub Pages deployment.
 
-## Planned capabilities
-
-- Relational schema and synthetic business dataset
-- Data quality checks and transformation queries
-- Sales, customer, and operational KPI queries
-- Views and reusable analytical SQL
-- A static dashboard presenting selected query results and insights
-
-## Technology
-
-PostgreSQL-compatible SQL, CSV seed data, and a static HTML/CSS/JavaScript showcase for published sample results.
-
-The implementation will favor a small, understandable dependency set and documented setup steps. Final versions and infrastructure choices will be recorded as they are selected.
-
-## Planned project structure
+## Project structure
 
 ```text
 sql-business-intelligence/
-├── sql/schema/ — table definitions and relationships
-├── sql/seeds/ — synthetic seed data
-├── sql/analysis/ — analytical queries
-├── data/ — documented sample data
-├── dashboard/ — static results showcase
-├── docs/ — data dictionary and methodology
+├── .github/workflows/
+│   ├── ci.yml
+│   └── deploy.yml
+├── database/
+│   ├── schema.sql
+│   └── seed.sql
+├── queries/
+│   ├── sales_performance.sql
+│   ├── customer_analysis.sql
+│   ├── product_performance.sql
+│   └── channel_region.sql
+├── tests/test_sql.py
+├── dashboard/
+│   ├── index.html
+│   ├── styles.css
+│   └── dashboard.js
 ├── README.md
 ├── ROADMAP.md
 └── CHANGELOG.md
 ```
 
-The exact structure may evolve as implementation begins.
+## Run locally
 
-## Getting started
+Requires Python 3.12+ and SQLite (included with Python).
 
-The application is not implemented yet, so installation and run instructions will be added with the first working milestone. No commands are provided here that would imply functionality exists before it does.
+Run the validation suite:
 
-## Demo and deployment
+```bash
+python -m unittest discover -s tests -v
+```
 
-The public demonstration is planned for **GitHub Pages static showcase (planned); SQL execution will be reproducible locally against PostgreSQL.**. The live URL will be added here after deployment and verification.
+Load the schema and sample data into a local SQLite database:
 
-## Quality approach
+```bash
+sqlite3 sales.db < database/schema.sql
+sqlite3 sales.db < database/seed.sql
+sqlite3 sales.db < queries/sales_performance.sql
+```
 
-- Automated tests for core business logic.
-- Synthetic examples instead of private or customer data.
-- Clear validation and error handling.
-- Reproducible setup and deployment instructions.
-- Documentation kept aligned with the actual code.
+Open `dashboard/index.html` in a browser to explore the static dashboard.
 
-## Roadmap
+## Data model and assumptions
 
-See [ROADMAP.md](ROADMAP.md) for planned milestones.
+- Revenue is calculated as quantity × unit price × (1 − discount rate).
+- Gross profit subtracts the product's unit cost from discounted selling price.
+- Returned and cancelled orders are excluded from sales-performance queries.
+- Currency values are illustrative USD amounts, not actual company results.
+- The dashboard uses a curated synthetic summary aligned to the sample business scenario; SQL files are the reproducible source for detailed analysis.
 
-## Changelog
+## Deployment
 
-See [CHANGELOG.md](CHANGELOG.md) for project history.
+The static dashboard is configured for GitHub Pages through GitHub Actions. The deployment workflow is in place, but the repository's Pages environment must be enabled with **GitHub Actions** as its source before the public URL can be confirmed.
 
-## Portfolio outcomes
+The live URL and successful deployment run will be added here after activation and verification.
 
-Demonstrates SQL querying, relational modeling, data quality, KPI design, analytical reasoning, and communicating insights.
+## Quality checks
 
-## Project status
+GitHub Actions runs the SQL validation suite on pushes and pull requests to `main`. Deployment and test status will be reflected here once the current runs complete.
 
-This repository currently establishes the project definition and documentation baseline. Features, screenshots, test results, and deployment links will be added only after they exist and have been verified.
+## Roadmap and changelog
+
+- [Roadmap](ROADMAP.md)
+- [Changelog](CHANGELOG.md)
+
+## Portfolio capabilities demonstrated
+
+Relational data modeling, SQL joins and aggregations, KPI definitions, customer segmentation, query validation, data integrity constraints, synthetic data design, and translating analytical outputs into a clear business dashboard.
+
+## Limitations
+
+- The dashboard is a static portfolio presentation; it does not connect to a live database.
+- The dataset is small and synthetic, not statistically representative.
+- No authentication, user roles, scheduled ETL, or production data pipeline is included.
