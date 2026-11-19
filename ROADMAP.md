@@ -25,9 +25,9 @@ Items are complete only when implemented and verified.
 - [x] Build responsive static dashboard with period filter and KPI cards.
 - [x] Add monthly revenue, channel mix, and product performance views.
 - [x] Configure GitHub Actions deployment workflow.
-- [ ] Enable GitHub Pages with GitHub Actions as the source in repository settings.
-- [ ] Complete a successful Pages deployment.
-- [ ] Publish and verify the live URL.
+- [x] Enable GitHub Pages with GitHub Actions as the source in repository settings.
+- [x] Complete a successful Pages deployment.
+- [x] Publish the live URL: https://matteojose3112-bit.github.io/sql-business-intelligence/
 - [ ] Add screenshots and a short walkthrough.
 
 ## Phase 4 — Quality and expansion
