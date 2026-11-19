@@ -22,7 +22,10 @@ All notable changes to this project are documented here.
 ### Verified
 - Earlier SQL validation workflow passed for the warehouse schema and analytics queries.
 
+### Verified
+- GitHub Actions SQL validation passed after replacing the Python test harness with SQLite CLI and Bash checks.
+- GitHub Pages deployment retry completed successfully.
+- Public dashboard URL: https://matteojose3112-bit.github.io/sql-business-intelligence/
+
 ### Pending verification
-- New SQLite CLI validation workflow after removing Python test tooling.
-- GitHub Pages activation and public deployment.
-- Browser acceptance check of the deployed dashboard.
+- Browser acceptance check of all dashboard filters and responsive layouts.
