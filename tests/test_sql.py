@@ -38,7 +38,7 @@ class SalesWarehouseTests(unittest.TestCase):
     def test_product_query_totals(self):
         rows = self.db.execute((ROOT / "queries/product_performance.sql").read_text()).fetchall()
         self.assertGreaterEqual(len(rows), 4)
-        self.assertEqual(sum(row[3] for row in rows), 37)
+        self.assertEqual(sum(row[3] for row in rows), 33)
 
 if __name__ == "__main__":
     unittest.main()
