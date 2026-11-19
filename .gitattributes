@@ -1,0 +1,2 @@
+# The dashboard is a presentation layer; SQL is the core analytical source.
+dashboard/** linguist-detectable=false
