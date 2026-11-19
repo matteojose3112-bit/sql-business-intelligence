@@ -16,7 +16,8 @@ Items are complete only when implemented and verified.
 - [x] Write customer lifetime value and repeat-purchase segmentation.
 - [x] Write product performance and profitability analysis.
 - [x] Write channel and regional contribution analysis.
-- [x] Pass automated validation suite on the latest commit.
+- [x] Replace the Python test harness with SQLite CLI and Bash validation.
+- [x] Pass SQL validation workflow on the latest verified commit.
 - [ ] Review query outputs against documented business assumptions.
 
 ## Phase 3 — Public demonstration
@@ -42,6 +43,6 @@ Items are complete only when implemented and verified.
 
 - A new user can reproduce the schema, seed data, and analysis locally.
 - Core data assumptions and SQL outputs are documented.
-- Automated tests pass.
+- Automated SQLite checks pass.
 - The public dashboard is deployed and verified.
 - All sample data is synthetic and no private information or credentials are committed.
