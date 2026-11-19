@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Synthetic retail sales analytics dashboard powered by SQL portfolio queries.">
+  <title>Signal BI | Sales Performance</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark">S</span> SIGNAL <span>BI</span></a>
+    <div class="top-meta"><span class="live-dot"></span> DEMO DATASET · FY2025</div>
+  </header>
+  <main class="shell">
+    <section class="intro">
+      <div><p class="eyebrow">BUSINESS INTELLIGENCE / SALES OVERVIEW</p><h1>Performance at a glance.</h1><p class="subhead">A compact sales performance view built from a normalized SQL warehouse and synthetic order data.</p></div>
+      <label class="filter">PERIOD <select id="period"><option value="all">Full year</option><option value="h1">H1 · Jan–Jun</option><option value="h2">H2 · Jul–Dec</option></select></label>
+    </section>
+    <section class="kpis" aria-label="Key performance indicators">
+      <article class="kpi"><span>NET REVENUE</span><strong id="revenue">$0</strong><small id="revenueNote">Completed orders</small></article>
+      <article class="kpi"><span>GROSS PROFIT</span><strong id="profit">$0</strong><small>After product costs</small></article>
+      <article class="kpi"><span>COMPLETED ORDERS</span><strong id="orders">0</strong><small>Excludes returns & cancellations</small></article>
+      <article class="kpi"><span>AVG. ORDER VALUE</span><strong id="aov">$0</strong><small>Revenue per completed order</small></article>
+    </section>
+    <section class="panel-grid">
+      <article class="panel chart-panel"><div class="panel-head"><div><p class="eyebrow">TREND</p><h2>Monthly revenue</h2></div><span class="unit">USD · SYNTHETIC</span></div><div id="chart" class="bar-chart" role="img" aria-label="Monthly revenue bar chart"></div></article>
+      <article class="panel"><div class="panel-head"><div><p class="eyebrow">MIX</p><h2>Revenue by channel</h2></div></div><div id="channels" class="channel-list"></div></article>
+    </section>
+    <section class="panel"><div class="panel-head"><div><p class="eyebrow">PRODUCT INTELLIGENCE</p><h2>Top products by revenue</h2></div><span class="unit">NET SALES</span></div><div class="table-wrap"><table><thead><tr><th>PRODUCT</th><th>CATEGORY</th><th>UNITS</th><th>REVENUE</th><th>GROSS PROFIT</th></tr></thead><tbody id="products"></tbody></table></div></section>
+    <footer><span>Signal BI · SQL Business Intelligence Portfolio</span><span>All records are fictional · Not for financial reporting</span></footer>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>
