@@ -16,7 +16,7 @@ Items are complete only when implemented and verified.
 - [x] Write customer lifetime value and repeat-purchase segmentation.
 - [x] Write product performance and profitability analysis.
 - [x] Write channel and regional contribution analysis.
-- [ ] Pass automated validation suite on the latest commit.
+- [x] Pass automated validation suite on the latest commit.
 - [ ] Review query outputs against documented business assumptions.
 
 ## Phase 3 — Public demonstration
