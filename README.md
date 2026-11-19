@@ -2,17 +2,18 @@
 
 > A synthetic retail sales warehouse, reusable SQL analysis, and a browser-based business intelligence showcase.
 
-**Status:** SQL analytics MVP implemented; CI validation passed; public deployment pending  
 **Primary language:** SQL (SQLite-compatible)  
-**Validation:** Python standard-library `unittest` + SQLite  
-**Dashboard:** Static HTML, CSS, and JavaScript  
+**Project:** Signal BI  
+**Status:** SQL analytics MVP implemented; CI validation passed; public deployment pending  
+**Validation:** SQLite CLI + Bash shell checks  
+**Dashboard:** Static HTML, CSS, and JavaScript presentation layer  
 **Live demo:** Pending GitHub Pages activation and deployment
 
 ## Overview
 
 Signal BI demonstrates how a normalized relational dataset can support practical management reporting. The project models customers, products, orders, and order items, then uses analytical SQL to calculate sales performance, customer value, product contribution, and channel/region mix.
 
-All records and values are fictional and are intended only for portfolio demonstration.
+All records and values are fictional and are intended only for portfolio demonstration. SQL is the core product language. The dashboard is a lightweight presentation layer; Bash is used only to orchestrate repeatable database checks.
 
 ## Implemented capabilities
 
@@ -23,13 +24,14 @@ All records and values are fictional and are intended only for portfolio demonst
 - Product revenue, units sold, and gross-profit analysis.
 - Sales channel and regional contribution analysis.
 - Responsive static dashboard with period filter, KPI cards, monthly revenue bars, channel mix, and product table.
-- Automated SQLite validation tests for referential integrity, seed counts, and analytics queries.
+- Automated SQLite validation checks for referential integrity, seed counts, and analytics queries.
 - GitHub Actions workflows for SQL validation and GitHub Pages deployment.
 
 ## Project structure
 
 ```text
 sql-business-intelligence/
+├── .gitattributes
 ├── .github/workflows/
 │   ├── ci.yml
 │   └── deploy.yml
@@ -41,7 +43,7 @@ sql-business-intelligence/
 │   ├── customer_analysis.sql
 │   ├── product_performance.sql
 │   └── channel_region.sql
-├── tests/test_sql.py
+├── tests/test_sql.sh
 ├── dashboard/
 │   ├── index.html
 │   ├── styles.css
@@ -53,12 +55,12 @@ sql-business-intelligence/
 
 ## Run locally
 
-Requires Python 3.12+ and SQLite (included with Python).
+Requires SQLite 3 and Bash.
 
-Run the validation suite:
+Run the automated SQL validation suite:
 
 ```bash
-python -m unittest discover -s tests -v
+bash tests/test_sql.sh
 ```
 
 Load the schema and sample data into a local SQLite database:
@@ -81,13 +83,13 @@ Open `dashboard/index.html` in a browser to explore the static dashboard.
 
 ## Deployment
 
-The static dashboard is configured for GitHub Pages through GitHub Actions. The deployment workflow is in place, but the repository's Pages environment must be enabled with **GitHub Actions** as its source before the public URL can be confirmed.
+The static dashboard is configured for GitHub Pages through GitHub Actions. The deployment workflow currently cannot find an enabled Pages site for this repository. Enable GitHub Pages with **GitHub Actions** as its source in [repository Pages settings](https://github.com/matteojose3112-bit/sql-business-intelligence/settings/pages), then rerun the deployment workflow.
 
-The live URL and successful deployment run will be added here after activation and verification.
+The live URL will be published here after deployment succeeds and the page is verified.
 
 ## Quality checks
 
-GitHub Actions SQL validation passed on the latest documentation commit. Pages deployment remains blocked until the repository Pages site is enabled with GitHub Actions as its source.
+GitHub Actions installs the SQLite CLI and runs `bash tests/test_sql.sh` on pushes and pull requests to `main`. No Python runtime or Python test harness is required.
 
 ## Roadmap and changelog
 
@@ -96,7 +98,7 @@ GitHub Actions SQL validation passed on the latest documentation commit. Pages d
 
 ## Portfolio capabilities demonstrated
 
-Relational data modeling, SQL joins and aggregations, KPI definitions, customer segmentation, query validation, data integrity constraints, synthetic data design, and translating analytical outputs into a clear business dashboard.
+Relational data modeling, SQL joins and aggregations, KPI definitions, customer segmentation, data integrity constraints, query validation, synthetic data design, and translating analytical outputs into a clear business dashboard.
 
 ## Limitations
 
