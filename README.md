@@ -4,10 +4,10 @@
 
 **Primary language:** SQL (SQLite-compatible)  
 **Project:** Signal BI  
-**Status:** SQL analytics MVP implemented; CI validation passed; public deployment pending  
+**Status:** SQL analytics MVP deployed; SQL validation passed  
 **Validation:** SQLite CLI + Bash shell checks  
 **Dashboard:** Static HTML, CSS, and JavaScript presentation layer  
-**Live demo:** Pending GitHub Pages activation and deployment
+**Live demo:** https://matteojose3112-bit.github.io/sql-business-intelligence/
 
 ## Overview
 
@@ -83,13 +83,11 @@ Open `dashboard/index.html` in a browser to explore the static dashboard.
 
 ## Deployment
 
-The static dashboard is configured for GitHub Pages through GitHub Actions. The deployment workflow currently cannot find an enabled Pages site for this repository. Enable GitHub Pages with **GitHub Actions** as its source in [repository Pages settings](https://github.com/matteojose3112-bit/sql-business-intelligence/settings/pages), then rerun the deployment workflow.
-
-The live URL will be published here after deployment succeeds and the page is verified.
+The static dashboard is configured for GitHub Pages through GitHub Actions. The GitHub Pages deployment workflow completed successfully on retry. The public dashboard is published at [Signal BI](https://matteojose3112-bit.github.io/sql-business-intelligence/).
 
 ## Quality checks
 
-GitHub Actions installs the SQLite CLI and runs `bash tests/test_sql.sh` on pushes and pull requests to `main`. No Python runtime or Python test harness is required.
+GitHub Actions installs the SQLite CLI and runs `bash tests/test_sql.sh` on pushes and pull requests to `main`. No Python runtime or Python test harness is required. The latest SQL validation run passed: [workflow run](https://github.com/matteojose3112-bit/sql-business-intelligence/actions/runs/44620536118).
 
 ## Roadmap and changelog
 
