@@ -18,7 +18,9 @@ All notable changes to this project are documented here.
 ### Changed
 - Replaced the documentation-only project outline with a working SQL analytics MVP and local setup instructions.
 
+### Verified
+- GitHub Actions SQL validation suite passed, including schema integrity and analytical query tests.
+
 ### Pending verification
-- Latest automated test run.
 - GitHub Pages activation and public deployment.
 - Browser acceptance check of the deployed dashboard.
