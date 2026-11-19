@@ -2,7 +2,7 @@
 
 > A synthetic retail sales warehouse, reusable SQL analysis, and a browser-based business intelligence showcase.
 
-**Status:** SQL analytics MVP implemented; automated validation and public deployment in progress  
+**Status:** SQL analytics MVP implemented; CI validation passed; public deployment pending  
 **Primary language:** SQL (SQLite-compatible)  
 **Validation:** Python standard-library `unittest` + SQLite  
 **Dashboard:** Static HTML, CSS, and JavaScript  
@@ -87,7 +87,7 @@ The live URL and successful deployment run will be added here after activation a
 
 ## Quality checks
 
-GitHub Actions runs the SQL validation suite on pushes and pull requests to `main`. Deployment and test status will be reflected here once the current runs complete.
+GitHub Actions SQL validation passed on the latest documentation commit. Pages deployment remains blocked until the repository Pages site is enabled with GitHub Actions as its source.
 
 ## Roadmap and changelog
 
