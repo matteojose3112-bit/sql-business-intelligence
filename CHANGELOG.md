@@ -12,15 +12,17 @@ All notable changes to this project are documented here.
 - Product performance and profitability query.
 - Sales channel and regional contribution query.
 - Static Signal BI dashboard with KPI cards, period filter, revenue trend, channel mix, and product table.
-- Python standard-library tests using in-memory SQLite.
+- SQLite CLI and Bash validation suite.
 - GitHub Actions workflows for SQL validation and GitHub Pages deployment.
 
 ### Changed
-- Replaced the documentation-only project outline with a working SQL analytics MVP and local setup instructions.
+- Replaced the Python-based test harness with native SQLite CLI checks orchestrated by Bash, keeping SQL as the clear primary project language.
+- Added GitHub Linguist configuration to emphasize the SQL core rather than the dashboard presentation layer.
 
 ### Verified
-- GitHub Actions SQL validation suite passed, including schema integrity and analytical query tests.
+- Earlier SQL validation workflow passed for the warehouse schema and analytics queries.
 
 ### Pending verification
+- New SQLite CLI validation workflow after removing Python test tooling.
 - GitHub Pages activation and public deployment.
 - Browser acceptance check of the deployed dashboard.
